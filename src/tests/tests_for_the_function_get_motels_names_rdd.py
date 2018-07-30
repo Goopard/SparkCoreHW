@@ -4,7 +4,7 @@ This module contains the tests for the function get_motels_names_rdd from the mo
 import unittest
 from pyspark import SparkContext, SparkConf
 from bids import get_motels_names_rdd, get_clear_rdd
-from bid_classes import CountryBidWithName, CountryBid, Bid, RawBid
+from bid_classes import CountryBidWithName, CountryBid, Bid
 
 
 class Tests(unittest.TestCase):
@@ -18,9 +18,9 @@ class Tests(unittest.TestCase):
     def test_first(self):
         result_rdd = get_motels_names_rdd(self.first_test_rdd, 'test_inputs\\test_motels.txt', self.sc)
         self.assertEqual(result_rdd.collect(),
-                         [CountryBidWithName(CountryBid(Bid(RawBid(self.first_test_set[0])), 'US'), 'SomeMotel'),
-                          CountryBidWithName(CountryBid(Bid(RawBid(self.first_test_set[0])), 'MX'), 'SomeMotel'),
-                          CountryBidWithName(CountryBid(Bid(RawBid(self.first_test_set[0])), 'CA'), 'SomeMotel')])
+                         [CountryBidWithName(CountryBid(Bid(self.first_test_set[0]), 'US'), 'SomeMotel'),
+                          CountryBidWithName(CountryBid(Bid(self.first_test_set[0]), 'MX'), 'SomeMotel'),
+                          CountryBidWithName(CountryBid(Bid(self.first_test_set[0]), 'CA'), 'SomeMotel')])
         self.sc.stop()
 
 

@@ -4,7 +4,7 @@ This module contains the tests for the function get_max_bid_rdd from the module 
 import unittest
 from pyspark import SparkContext, SparkConf
 from bids import get_max_bid_rdd, get_clear_rdd
-from bid_classes import RawBid, Bid, CountryBid
+from bid_classes import Bid, CountryBid
 
 
 class Tests(unittest.TestCase):
@@ -17,7 +17,7 @@ class Tests(unittest.TestCase):
 
     def test_first(self):
         result_rdd = get_max_bid_rdd(self.first_test_rdd)
-        self.assertEqual(result_rdd.collect(), [CountryBid(Bid(RawBid(self.first_test_set[0])), 'US')])
+        self.assertEqual(result_rdd.collect(), [CountryBid(Bid(self.first_test_set[0]), 'US')])
         self.sc.stop()
 
 

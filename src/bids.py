@@ -1,5 +1,5 @@
 import os
-from bid_classes import RawBid, ErrorBid, Bid, CountryBid, CountryBidWithName, Exchange, ErrorBidWithFrequency, Motel
+from bid_classes import ErrorBid, Bid, CountryBid, CountryBidWithName, Exchange, ErrorBidWithFrequency, Motel
 from pyspark import SparkConf, SparkContext
 from operator import attrgetter
 
@@ -53,7 +53,7 @@ def get_clear_rdd(raw_unclear_rdd):
     :type raw_unclear_rdd: RDD.
     :return: RDD - required error-clear rdd with only the CountryBids left.
     """
-    return raw_unclear_rdd.filter(lambda line: 'ERROR' not in line).map(RawBid).map(Bid).flatMap(collect_countries)\
+    return raw_unclear_rdd.filter(lambda line: 'ERROR' not in line).map(Bid).flatMap(collect_countries)\
         .filter(attrgetter('price'))
 
 

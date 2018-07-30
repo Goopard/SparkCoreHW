@@ -14,45 +14,17 @@ def get_date(raw_date):
     return '-'.join([values[3], values[2], values[1]]) + ' ' + values[0] + ':00'
 
 
-class RawBid:
+class Bid:
     """
-    This class embodies the raw bid item, which contains all of the information on a bid.
+    This class embodies the bid item, which contains only these fields: motel_id, date, US, MX, CA.
     """
     def __init__(self, line):
         values = line.split(',')
         self.motel_id = values[0]
         self.date = get_date(values[1])
-        self.HU = values[2]
-        self.UK = values[3]
-        self.NL = values[4]
         self.US = values[5]
         self.MX = values[6]
-        self.AU = values[7]
         self.CA = values[8]
-        self.CN = values[9]
-        self.KR = values[10]
-        self.BE = values[11]
-        self.I = values[12]
-        self.JP = values[13]
-        self.IN = values[14]
-        self.HN = values[15]
-        self.GY = values[16]
-        self.DE = values[17]
-
-    def __repr__(self):
-        return ','.join(self.__dict__.values())
-
-
-class Bid:
-    """
-    This class embodies the bid item, which contains only these fields: motel_id, date, US, MX, CA.
-    """
-    def __init__(self, raw_bid):
-        self.motel_id = raw_bid.motel_id
-        self.date = raw_bid.date
-        self.US = raw_bid.US
-        self.MX = raw_bid.MX
-        self.CA = raw_bid.CA
 
     def __repr__(self):
         return ','.join(self.__dict__.values())
@@ -67,7 +39,7 @@ class CountryBid:
         self.date = bid.date
         self.country = country
         try:
-            self.price = float(bid.__getattribute__(country))
+            self.price = float(getattr(bid, 'country'))
         except ValueError:
             self.price = None
 
