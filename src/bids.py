@@ -1,7 +1,7 @@
 import os
 from bid_classes import ErrorBid, Bid, CountryBid, CountryBidWithName, Exchange, ErrorBidWithFrequency, Motel
 from pyspark import SparkConf, SparkContext
-from operator import attrgetter
+from operator import attrgetter, itemgetter
 from functools import partial
 
 
@@ -88,15 +88,6 @@ def get_motels_names_rdd(rdd, path_to_motels, spark_context):
     return rdd.map(lambda country_bid: CountryBidWithName(country_bid, motels.value[country_bid.motel_id]))
 
 
-def find_max(group):
-    """This function is used to return the CountryBidWithName with a biggest price from a group.
-     :param group: Some group of CountryBidWithName objects.
-    :type group: tuple.
-    :return: CountryBidWithName -- the required most expensive bid.
-    """
-    return max(group[1], key=attrgetter('price'))
-
-
 def get_max_bid_rdd(rdd):
     """This function leaves only the most expensive bids per date and motel from some given rdd.
 
@@ -104,7 +95,8 @@ def get_max_bid_rdd(rdd):
     :type rdd: RDD.
     :return: RDD - the required rdd with only the most expensive bids.
     """
-    return rdd.groupBy(lambda bid: bid.motel_id + ',' + bid.date).map(find_max)
+    return rdd.groupBy(lambda bid: bid.motel_id + ',' + bid.date).mapValues(partial(max, key=attrgetter('price')))\
+        .map(itemgetter(1))
 
 
 if __name__ == '__main__':

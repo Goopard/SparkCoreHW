@@ -21,15 +21,15 @@ class Tests(unittest.TestCase):
 
     def test_3_same_errors(self):
         result_rdd = get_errors_rdd(self.first_test_rdd)
-        self.assertEqual(result_rdd.collect(), [ErrorBidWithFrequency('2016-04-29 14:00',
-                                                                      'ERROR_BID_SERVICE_UNAVAILABLE', 3)])
+        self.assertEqual(result_rdd.collect(), [ErrorBidWithFrequency((('2016-04-29 14:00',
+                                                                      'ERROR_BID_SERVICE_UNAVAILABLE'), 3))])
         self.sc.stop()
 
     def test_some_different_errors(self):
         result_rdd = get_errors_rdd(self.second_test_rdd)
         self.assertEqual(result_rdd.collect(),
-                         [ErrorBidWithFrequency('2016-04-29 14:00', 'ERROR_BID_SERVICE_UNAVAILABLE', 2),
-                          ErrorBidWithFrequency('2016-02-08 04:00', 'ERROR_ACCESS_DENIED', 2)])
+                         [ErrorBidWithFrequency((('2016-04-29 14:00', 'ERROR_BID_SERVICE_UNAVAILABLE'), 2)),
+                          ErrorBidWithFrequency((('2016-02-08 04:00', 'ERROR_ACCESS_DENIED'), 2))])
         self.sc.stop()
 
 

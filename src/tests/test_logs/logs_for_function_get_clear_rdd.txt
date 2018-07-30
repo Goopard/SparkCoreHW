@@ -1,0 +1,13 @@
+Testing started at 19:31 ...
+C:\Users\nicka\PycharmProjects\trashbin_with_java\venv\Scripts\python.exe "C:\Program Files\JetBrains\PyCharm Community Edition 2017.3.4\helpers\pycharm\_jb_unittest_runner.py" --path C:/Users/nicka/PycharmProjects/trashbin_with_java/src/tests/tests_for_function_get_eur_prices_rdd.py
+Launching unittests with arguments python -m unittest C:/Users/nicka/PycharmProjects/trashbin_with_java/src/tests/tests_for_function_get_eur_prices_rdd.py in C:\Users\nicka\PycharmProjects\trashbin_with_java\src\tests
+2018-07-30 19:31:11 WARN  NativeCodeLoader:62 - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+2018-07-30 19:31:12 WARN  Utils:66 - Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+
+Ran 1 test in 13.037s
+
+OK
+
+Process finished with exit code 0
