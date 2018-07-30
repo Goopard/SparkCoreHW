@@ -1,0 +1,6 @@
+venv/
+.idea/
+input/
+output/bids/
+output/bids_euro/
+output/error_bids/
