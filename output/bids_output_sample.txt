@@ -1,0 +1,200 @@
+0000775,Moos' Apartments,2015-08-23 03:00,1.205
+0001145,Saionara Hotelo,2016-05-01 20:00,0.346
+0000500,River Side Sun Sine Posada,2016-05-23 07:00,1.757
+0000011,Senado Majestic Spa,2016-05-08 04:00,1.521
+0000656,Merlin Spa,2015-10-17 11:00,1.146
+0000762,Sun Sine Highway Hotelo,2016-01-31 03:00,1.504
+0000282,Jon's Hyatt Motor Inn,2016-04-05 10:00,1.834
+0000670,Highway Inn,2016-07-28 08:00,1.337
+0000295,Pestana City Olinda Hotel,2016-02-16 03:00,1.393
+0000368,Eas Side Premier Motel,2016-06-02 00:00,1.398
+0000341,Por Suburbs Hostel,2015-12-17 22:00,1.709
+0000457,River Side Copacabana Hotelo,2016-06-20 09:00,0.816
+0001143,Amanhecer Olinda Casa,2016-03-10 08:00,1.670
+0000446,Sheraton Posada,2015-09-06 17:00,1.918
+0000749,Moos' Village Spa,2016-05-06 14:00,1.009
+0000300,Elegance Vermont Motel,2016-03-29 15:00,0.865
+0001095,Novelo Moon Light Motor Inn,2015-09-08 01:00,1.882
+0000669,Eas Side Tavern,2016-02-08 08:00,1.705
+0000231,City Amanhecer Tiny Inn,2016-03-31 01:00,1.735
+0000799,Hyatt Hotelo,2016-06-19 08:00,1.827
+0000038,Upper Side Highway Pestana Granja,2015-08-26 10:00,1.317
+0000073,Grand Suburbs Geronimo Apartments,2016-05-10 18:00,1.337
+0000637,Imperial Apartments,2015-12-28 03:00,1.575
+0000332,Moos' la pensión,2016-02-21 04:00,1.363
+0000200,Moon Light Inn,2015-10-18 17:00,1.410
+0000447,Slaviero Sheraton Tavern,2015-10-18 17:00,1.558
+0000773,Slaviero Moos' Big River Hotelo,2016-08-01 11:00,1.588
+0000071,Upper Side Jon's Asturias Apartments,2016-03-02 18:00,1.306
+0000031,Majestic Upper Side Senado Spa,2016-03-27 10:00,1.662
+0001047,Premier Senado Spa,2016-02-14 07:00,0.910
+0000657,Premier Jon's Spa,2015-11-10 20:00,1.680
+0000263,Mengo Grand la pensión,2015-08-29 23:00,1.487
+0000605,Asturias Ibiza Suburbs Casino,2015-10-05 14:00,0.413
+0000855,Moon Light Merlin Motel,2016-06-27 18:00,1.185
+0000043,Majestic Village Casa,2015-11-09 06:00,1.430
+0000454,Amanhecer Novelo Ibiza Plaza,2016-03-20 19:00,1.457
+0000928,Saionara River Side Posada,2015-10-10 15:00,1.226
+0000921,Upper Side Pestana Apartments,2015-09-19 15:00,1.690
+0000309,Upper Side Pestana Motor Inn,2016-05-17 10:00,1.382
+0001021,Imperial Novelo Tavern,2016-05-16 23:00,1.658
+0000630,Geronimo Vermont la pensión,2016-01-14 13:00,1.543
+0001168,Geronimo Suburbs Granja,2016-02-07 21:00,1.804
+0000736,Novelo Sun Sine Spa,2016-04-14 18:00,0.458
+0000954,Down Town Big River Casino,2015-11-28 22:00,1.490
+0000750,Pestana Ibiza Tavern,2016-07-19 02:00,1.260
+0000138,Majestic Copacabana Plaza,2016-03-22 02:00,1.438
+0000198,Eas Side Motor Inn,2015-12-13 16:00,1.268
+0000005,Elegance Tavern,2016-05-19 12:00,1.603
+0000225,Barra Suburbs Slaviero Casa,2016-06-17 15:00,1.464
+0000433,Majestic Plaza,2016-02-22 10:00,1.163
+0000287,Suburbs Slaviero Barra Apartments,2015-10-04 13:00,1.503
+0000905,Slaviero Tiny City Hotel,2016-05-12 08:00,1.528
+0000030,Big River Spa,2015-10-04 03:00,1.060
+0001152,Pestana Hotelo,2016-04-03 16:00,1.243
+0000727,Ibiza Olinda la pensión,2016-04-27 19:00,1.328
+0000610,Jon's Moos' Posada,2016-03-26 09:00,1.539
+0001082,Vermont Jon's Motor Inn,2015-12-20 11:00,1.546
+0000727,Ibiza Olinda la pensión,2016-02-15 21:00,1.438
+0001138,Elegance Sun Sine Boarding House,2015-09-16 22:00,1.662
+0000074,Slaviero Tiny la pensión,2016-05-05 11:00,1.357
+0000967,River Side Posada,2016-01-08 09:00,0.850
+0000516,Big River Upper Side Apartments,2015-12-13 20:00,1.683
+0000502,Barra Plaza,2015-08-22 14:00,1.276
+0000596,Vermont Upper Side Inn,2016-01-29 12:00,1.214
+0000687,Majestic Por Granja,2015-11-18 03:00,1.721
+0000794,Amanhecer Novelo Windsor Hotel,2016-07-25 22:00,0.359
+0000867,Geronimo Tavern,2016-05-15 20:00,1.110
+0000117,Barra Senado Hostel,2016-02-03 03:00,1.800
+0001152,Pestana Hotelo,2016-06-15 00:00,1.286
+0001170,Novelo Down Town la pensión,2016-01-03 03:00,1.895
+0000306,Imperial Imperial Plaza,2015-10-09 15:00,1.032
+0000537,Big River Suburbs Inn,2016-07-03 21:00,1.849
+0001085,Merlin Down Town Tavern,2015-09-06 16:00,1.463
+0000031,Majestic Upper Side Senado Spa,2016-05-26 16:00,1.345
+0000462,Merlin Boarding House,2016-07-15 07:00,1.464
+0000350,Suburbs Elegance Hostel,2015-10-15 15:00,1.640
+0001035,Grand Spa,2016-06-11 00:00,1.704
+0000176,Saionara Geronimo Casa,2016-06-13 08:00,1.282
+0000263,Mengo Grand la pensión,2015-08-16 14:00,1.786
+0000602,Premier Sun Sine Hostel,2015-12-25 23:00,1.458
+0000326,Barra Hyatt Hostel,2015-10-23 21:00,0.979
+0000249,Eas Side Windsor Granja,2015-12-24 10:00,1.272
+0000595,Copacabana Hotel,2016-01-01 01:00,1.675
+0000898,Geronimo Jon's Copacabana Hotel,2016-07-23 06:00,1.581
+0000932,City Premier Highway Casa,2015-12-27 18:00,1.442
+0000695,Moos' Jon's Tavern,2015-10-16 08:00,1.093
+0000466,Asturias Elegance Hotelo,2016-02-26 20:00,0.668
+0000763,Imperial Geronimo Hotelo,2015-11-02 18:00,0.829
+0000339,Senado Inn,2016-02-15 11:00,1.835
+0001187,Barra Moos' Por Posada,2016-04-16 10:00,1.556
+0000790,Village Sun Sine Por Plaza,2016-04-18 13:00,1.583
+0000289,River Side Down Town Tavern,2016-03-13 13:00,2.021
+0001085,Merlin Down Town Tavern,2016-04-14 02:00,1.327
+0000649,Geronimo Motel,2016-07-11 01:00,0.864
+0000371,City City Apartments,2016-05-12 15:00,1.490
+0000977,Mengo City Hostel,2016-06-28 21:00,1.584
+0000116,Por Hyatt Apartments,2016-07-18 16:00,0.450
+0000226,Tiny Down Town Geronimo Inn,2015-11-19 04:00,1.798
+0000173,Sheraton Senado Posada,2016-06-10 21:00,1.033
+0000144,Village Sheraton Motor Inn,2015-08-19 00:00,0.301
+0000155,Suburbs Slaviero Tavern,2016-04-09 00:00,1.735
+0000341,Por Suburbs Hostel,2015-10-01 02:00,1.531
+0001193,Premier Tiny Hotel,2015-08-09 20:00,1.363
+0000626,Novelo Geronimo Copacabana Plaza,2016-06-01 16:00,1.617
+0000867,Geronimo Tavern,2016-03-21 18:00,1.233
+0000553,Elegance Inn,2016-02-11 16:00,0.617
+0000070,Tiny Sheraton Down Town Granja,2016-03-23 03:00,1.428
+0000832,Moos' Amanhecer Copacabana Inn,2016-05-22 06:00,1.654
+0000259,Por Slaviero Moos' Boarding House,2015-09-05 00:00,2.049
+0000922,Village Spa,2016-04-08 16:00,1.092
+0000269,Ibiza River Side Hostel,2015-08-18 02:00,1.644
+0000698,Upper Side Vermont River Side la pensión,2015-09-28 00:00,0.300
+0000869,River Side Grand Mengo Granja,2015-10-17 10:00,1.745
+0000328,Grand Olinda Inn,2016-07-12 14:00,1.698
+0000103,Saionara Senado Posada,2015-08-10 09:00,0.743
+0000014,Grand Suburbs Copacabana Apartments,2016-01-01 12:00,1.668
+0000922,Village Spa,2016-07-04 21:00,1.632
+0000982,River Side Windsor Copacabana Casino,2016-02-05 11:00,1.686
+0001041,Highway Novelo Inn,2016-05-30 04:00,1.908
+0000019,Mengo Vermont Apartments,2016-03-10 09:00,0.594
+0000796,City Sun Sine Hostel,2015-11-17 05:00,0.761
+0000143,Saionara Geronimo Sheraton Posada,2015-12-21 07:00,1.641
+0001195,Barra Village Tavern,2016-02-12 00:00,1.871
+0000352,Barra Village Boarding House,2016-03-08 17:00,1.582
+0000514,Sun Sine Sheraton Spa,2015-11-17 12:00,0.807
+0000104,Ibiza Barra Casino,2016-06-25 18:00,0.701
+0000414,Down Town Sheraton Senado Posada,2016-05-10 15:00,0.950
+0000852,Highway Premier Granja,2015-12-03 18:00,1.403
+0000631,Mengo Granja,2015-11-17 09:00,1.219
+0000516,Big River Upper Side Apartments,2016-08-02 07:00,0.950
+0000576,Hyatt Por Motor Inn,2015-08-12 09:00,1.371
+0000554,Windsor City Premier Inn,2016-01-17 13:00,1.613
+0000610,Jon's Moos' Posada,2016-05-09 22:00,1.468
+0001084,Novelo Casino,2016-01-21 17:00,1.222
+0000636,Merlin Copacabana Inn,2015-09-23 15:00,0.705
+0000972,Merlin Por Hostel,2016-01-19 03:00,1.523
+0000922,Village Spa,2015-08-22 13:00,1.294
+0000877,Windsor Hyatt Hotelo,2015-10-15 11:00,1.090
+0000545,Olinda Asturias la pensión,2016-05-21 19:00,1.403
+0000123,Moon Light Hotelo,2015-12-24 17:00,1.698
+0000451,Suburbs River Side Eas Side Spa,2016-07-23 00:00,1.783
+0000345,City Geronimo Village Spa,2016-05-02 15:00,1.749
+0000937,Premier Moos' Premier Apartments,2015-11-26 17:00,1.180
+0000605,Asturias Ibiza Suburbs Casino,2015-08-10 20:00,1.846
+0001180,Olinda Asturias Hotelo,2015-08-12 04:00,1.716
+0001162,Saionara Tavern,2015-08-21 08:00,1.036
+0000111,Barra Windsor Tavern,2015-09-19 17:00,1.099
+0001075,Village Apartments,2016-08-04 03:00,1.495
+0000272,Upper Side Ibiza Novelo Hotelo,2016-04-09 10:00,1.649
+0000940,Sheraton Windsor Plaza,2016-02-13 00:00,1.135
+0000105,Vermont Grand Grand Plaza,2016-04-06 12:00,0.788
+0000979,Senado Motor Inn,2015-12-20 17:00,1.522
+0000555,Eas Side Boarding House,2016-04-02 14:00,1.034
+0000295,Pestana City Olinda Hotel,2016-07-13 23:00,1.414
+0000880,Hyatt Amanhecer Tavern,2016-07-01 23:00,1.854
+0000356,Saionara Elegance Casa,2015-09-28 07:00,1.544
+0000995,Village Suburbs Ibiza Hostel,2015-11-29 23:00,1.759
+0000348,Ibiza Suburbs Apartments,2016-01-22 21:00,1.807
+0000581,Suburbs Vermont Plaza,2015-08-08 00:00,1.156
+0000140,Pestana Saionara Plaza,2016-06-19 01:00,1.687
+0000394,Jon's la pensión,2016-07-17 03:00,1.610
+0000517,Imperial Majestic Moos' Casino,2016-02-19 05:00,1.482
+0000918,Sheraton Por Windsor Spa,2015-09-25 23:00,0.802
+0000235,City Jon's Casa,2015-08-22 13:00,1.421
+0000278,Ibiza Ibiza Posada,2016-07-15 16:00,1.862
+0000726,Senado Copacabana Tavern,2015-12-16 22:00,1.317
+0000671,Upper Side Merlin Big River Plaza,2015-11-21 11:00,1.825
+0000716,Pestana Asturias Inn,2016-05-20 04:00,1.866
+0000711,Copacabana Eas Side Motor Inn,2016-05-17 01:00,1.830
+0000883,Tiny Pestana la pensión,2016-04-20 11:00,1.542
+0001041,Highway Novelo Inn,2016-04-09 09:00,1.976
+0000904,Geronimo Ibiza Hotelo,2016-01-14 12:00,1.640
+0000288,Eas Side Premier la pensión,2015-11-14 18:00,1.774
+0001070,Ibiza Hostel,2016-05-07 02:00,1.309
+0000786,Down Town Barra Highway Apartments,2016-04-30 03:00,2.018
+0000569,Suburbs Windsor Motor Inn,2015-12-03 19:00,1.335
+0001120,Eas Side Hyatt Motor Inn,2015-08-28 22:00,1.826
+0001129,Big River Olinda Posada,2016-08-03 16:00,1.270
+0001193,Premier Tiny Hotel,2015-11-01 06:00,1.030
+0000218,Por Barra Hostel,2015-11-19 21:00,0.982
+0000125,Village Barra Tavern,2016-06-28 23:00,1.636
+0000547,Saionara Tiny Motor Inn,2016-01-23 18:00,1.339
+0000934,Premier Novelo Tavern,2015-10-27 01:00,1.647
+0000575,Jon's Village Granja,2015-12-26 17:00,1.901
+0000302,Premier Vermont Hotelo,2015-08-22 01:00,1.320
+0000689,River Side Down Town Tavern,2016-02-13 02:00,1.924
+0000825,Jon's Tavern,2016-02-22 02:00,1.564
+0000527,Premier Geronimo Casino,2016-07-07 13:00,1.946
+0000059,Moos' Motel,2016-07-30 10:00,1.307
+0000195,Tiny Amanhecer Boarding House,2015-11-06 08:00,1.039
+0000936,Ibiza Senado Motor Inn,2016-04-30 01:00,1.300
+0000385,Moon Light Majestic Spa,2015-10-19 12:00,1.564
+0000537,Big River Suburbs Inn,2016-05-19 16:00,1.593
+0000547,Saionara Tiny Motor Inn,2016-03-29 10:00,1.318
+0000369,Novelo la pensión,2015-12-25 18:00,1.345
+0000755,Majestic Village City Inn,2015-11-19 22:00,1.574
+0000430,Village Moon Light Boarding House,2015-10-07 06:00,0.658
+0000636,Merlin Copacabana Inn,2016-06-30 16:00,1.165
+0000822,River Side Saionara Elegance Apartments,2015-11-13 22:00,1.845
+0001058,Sheraton Olinda Hostel,2016-01-11 22:00,0.408
