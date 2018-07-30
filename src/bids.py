@@ -2,36 +2,24 @@ import os
 from bid_classes import ErrorBid, Bid, CountryBid, CountryBidWithName, Exchange, ErrorBidWithFrequency, Motel
 from pyspark import SparkConf, SparkContext
 from operator import attrgetter
+from functools import partial
 
 
 os.environ['JAVA_HOME'] = 'C:\\Progra~1\\Java\\jdk1.8.0_181'
 os.environ['HADOOP_HOME'] = 'C:\\hadoop'
 
 
-def collect_errors(group):
-    """This function is used to collect all the unique values from the iterable group[1] into a list of tuples like (value,
-    frequency), and than turn those pairs into the instances of class ErrorBidWithFrequency.
-
-    :param group: some group of erroneous bids created by .groupBy(), consists of group[0] - the group key (which is the
-    date in our case), and group[1], which is an iterable, containing instances of the ErrorBid class.
-    :return: list(ErrorBidWithFrequency) -- just a list of all of the values of error codes from the group with their
-    frequencies.
-    """
-    date = group[0]
-    errors = list(map(attrgetter('error_code'), list(group[1])))
-    errors_with_frequencies = [(code, errors.count(code)) for code in set(errors)]
-    return [ErrorBidWithFrequency(date, error[0], error[1]) for error in errors_with_frequencies]
-
-
 def get_errors_rdd(rdd):
     """This functions finds all the erroneous records in the given rdd, cast those records to the ErrorBid class, than
-    groups them by the date and counts the frequency for each error code in each hour, and returns the result as rdd.
+    groups them by the date and code, then counts the frequency for each error code in each hour, and returns the result
+    as rdd.
 
     :param rdd: The input rdd with some bids.
     :type rdd: RDD.
     :return: RDD -- the required list of errors with the frequencies in each hour.
     """
-    return rdd.filter(lambda line: 'ERROR' in line).map(ErrorBid).groupBy(attrgetter('date')).flatMap(collect_errors)
+    return rdd.filter(lambda line: 'ERROR' in line).map(ErrorBid)\
+        .groupBy(lambda error: (error.date, error.error_code)).mapValues(len).map(ErrorBidWithFrequency)
 
 
 def collect_countries(bid):
@@ -102,8 +90,7 @@ def get_motels_names_rdd(rdd, path_to_motels, spark_context):
 
 def find_max(group):
     """This function is used to return the CountryBidWithName with a biggest price from a group.
-
-    :param group: Some group of CountryBidWithName objects.
+     :param group: Some group of CountryBidWithName objects.
     :type group: tuple.
     :return: CountryBidWithName -- the required most expensive bid.
     """
@@ -121,22 +108,22 @@ def get_max_bid_rdd(rdd):
 
 
 if __name__ == '__main__':
-    conf = SparkConf().setMaster('yarn').setAppName('bids')
+    conf = SparkConf().setMaster('local').setAppName('bids')
     conf.set('spark.submit.pyFiles', '/usr/bid_classes.py')
     conf.set('spark.executor.memory', '1g')
     conf.set('spark.driver.memory', '1g')
     sc = SparkContext(conf=conf)
     sc.addPyFile('/usr/bid_classes.py')
 
-    raw_unclear_bids = sc.textFile('/user/raj_ops/bid_data_large/bids.txt')
+    raw_unclear_bids = sc.textFile('/user/raj_ops/bid_data/bids.txt')
 
     error_bids = get_errors_rdd(raw_unclear_bids)
     error_bids.saveAsTextFile('/user/raj_ops/error_bids')
 
     bids = get_clear_rdd(raw_unclear_bids)
-    bids = get_eur_prices_rdd(bids, '/user/raj_ops/bid_data_large/exchange_rate.txt', sc)
+    bids = get_eur_prices_rdd(bids, '/user/raj_ops/bid_data/exchange_rate.txt', sc)
     bids.saveAsTextFile('/user/raj_ops/bids_euro')
 
     bids = get_max_bid_rdd(bids)
-    bids = get_motels_names_rdd(bids, '/user/raj_ops/bid_data_large/motels.txt', sc)
+    bids = get_motels_names_rdd(bids, '/user/raj_ops/bid_data/motels.txt', sc)
     bids.saveAsTextFile('/user/raj_ops/bids')

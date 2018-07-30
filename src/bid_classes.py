@@ -39,7 +39,7 @@ class CountryBid:
         self.date = bid.date
         self.country = country
         try:
-            self.price = float(getattr(bid, 'country'))
+            self.price = float(getattr(bid, country))
         except ValueError:
             self.price = None
 
@@ -88,10 +88,9 @@ class ErrorBidWithFrequency:
     This class embodies the group of erroneous bids, which contains fields date, error_code and frequency (amount of
     such bids).
     """
-    def __init__(self, date, code, frequency):
-        self.date = date
-        self.error_code = code
-        self.frequency = frequency
+    def __init__(self, date_code_frequency):
+        self.date, self.error_code = date_code_frequency[0]
+        self.frequency = date_code_frequency[1]
 
     def __repr__(self):
         return ','.join([self.date, self.error_code, str(self.frequency)])
