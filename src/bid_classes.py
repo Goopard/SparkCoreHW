@@ -1,6 +1,19 @@
 """
 This module contains all the domain classes for the module bids.py.
 """
+from functools import total_ordering
+
+HEADER = ["MotelID", "BidDate", "HU", "UK",  "NL", "US", "MX", "AU", "CA", "CN", "KR","BE", "I","JP", "IN", "HN", "GY", "DE"]
+
+
+def get_country_num(country):
+    """This function returns the countries number in the HEADER.
+
+    :param country: Country code.
+    :type country: str.
+    :return: int.
+    """
+    return [i for i in range(len(HEADER)) if HEADER[i] == country][0]
 
 
 def get_date(raw_date):
@@ -18,18 +31,17 @@ class Bid:
     """
     This class embodies the bid item, which contains only these fields: motel_id, date, US, MX, CA.
     """
-    def __init__(self, line):
+    def __init__(self, line, countries):
         values = line.split(',')
         self.motel_id = values[0]
         self.date = get_date(values[1])
-        self.US = values[5]
-        self.MX = values[6]
-        self.CA = values[8]
+        self.prices = dict(zip(countries, [values[get_country_num(country)] for country in countries]))
 
     def __repr__(self):
-        return ','.join(self.__dict__.values())
+        return ','.join([self.motel_id, self.date] + list(self.prices.values()))
 
 
+@total_ordering
 class CountryBid:
     """
     This class embodies a bid with the information on only one country: motel_id, date, country.
@@ -39,7 +51,7 @@ class CountryBid:
         self.date = bid.date
         self.country = country
         try:
-            self.price = float(getattr(bid, country))
+            self.price = float(bid.prices[country])
         except ValueError:
             self.price = None
 
@@ -48,6 +60,9 @@ class CountryBid:
 
     def __eq__(self, other):
         return self.motel_id == other.motel_id and self.date == other.date and self.country == other.country
+
+    def __le__(self, other):
+        return self.price <= other.price
 
 
 class CountryBidWithName:

@@ -7,6 +7,9 @@ from bids import get_max_bid_rdd, get_clear_rdd
 from bid_classes import Bid, CountryBid
 
 
+COUNTRIES = ['US', 'MX', 'CA']
+
+
 class Tests(unittest.TestCase):
     def setUp(self):
         self.conf = SparkConf().setMaster('local').setAppName('testing')
@@ -17,7 +20,7 @@ class Tests(unittest.TestCase):
 
     def test_first(self):
         result_rdd = get_max_bid_rdd(self.first_test_rdd)
-        self.assertEqual(result_rdd.collect(), [CountryBid(Bid(self.first_test_set[0]), 'US')])
+        self.assertEqual(result_rdd.collect(), [CountryBid(Bid(self.first_test_set[0], COUNTRIES), 'US')])
         self.sc.stop()
 
 

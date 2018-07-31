@@ -7,6 +7,9 @@ from bids import get_clear_rdd
 from bid_classes import Bid, CountryBid
 
 
+COUNTRIES = ['US', 'MX', 'CA']
+
+
 class Tests(unittest.TestCase):
     def setUp(self):
         self.conf = SparkConf().setMaster('local').setAppName('testing')
@@ -27,29 +30,29 @@ class Tests(unittest.TestCase):
 
     def test_first(self):
         result_rdd = get_clear_rdd(self.first_test_rdd)
-        self.assertEqual(result_rdd.collect(), [CountryBid(Bid(self.first_test_set[0]), 'US'),
-                                                CountryBid(Bid(self.first_test_set[0]), 'MX'),
-                                                CountryBid(Bid(self.first_test_set[0]), 'CA'),
-                                                CountryBid(Bid(self.first_test_set[1]), 'US'),
-                                                CountryBid(Bid(self.first_test_set[1]), 'MX'),
-                                                CountryBid(Bid(self.first_test_set[1]), 'CA'),
-                                                CountryBid(Bid(self.first_test_set[4]), 'US'),
-                                                CountryBid(Bid(self.first_test_set[4]), 'MX'),
-                                                CountryBid(Bid(self.first_test_set[4]), 'CA'),
-                                                CountryBid(Bid(self.first_test_set[5]), 'US'),
-                                                CountryBid(Bid(self.first_test_set[5]), 'MX'),
-                                                CountryBid(Bid(self.first_test_set[5]), 'CA')])
+        self.assertEqual(result_rdd.collect(), [CountryBid(Bid(self.first_test_set[0], COUNTRIES), 'US'),
+                                                CountryBid(Bid(self.first_test_set[0], COUNTRIES), 'MX'),
+                                                CountryBid(Bid(self.first_test_set[0], COUNTRIES), 'CA'),
+                                                CountryBid(Bid(self.first_test_set[1], COUNTRIES), 'US'),
+                                                CountryBid(Bid(self.first_test_set[1], COUNTRIES), 'MX'),
+                                                CountryBid(Bid(self.first_test_set[1], COUNTRIES), 'CA'),
+                                                CountryBid(Bid(self.first_test_set[4], COUNTRIES), 'US'),
+                                                CountryBid(Bid(self.first_test_set[4], COUNTRIES), 'MX'),
+                                                CountryBid(Bid(self.first_test_set[4], COUNTRIES), 'CA'),
+                                                CountryBid(Bid(self.first_test_set[5], COUNTRIES), 'US'),
+                                                CountryBid(Bid(self.first_test_set[5], COUNTRIES), 'MX'),
+                                                CountryBid(Bid(self.first_test_set[5], COUNTRIES), 'CA')])
         self.sc.stop()
 
     def test_second(self):
         result_rdd = get_clear_rdd(self.second_test_rdd)
-        self.assertEqual(result_rdd.collect(), [CountryBid(Bid(self.second_test_set[0]), 'MX'),
-                                                CountryBid(Bid(self.second_test_set[0]), 'CA'),
-                                                CountryBid(Bid(self.second_test_set[1]), 'US'),
-                                                CountryBid(Bid(self.second_test_set[1]), 'MX'),
-                                                CountryBid(Bid(self.second_test_set[1]), 'CA'),
-                                                CountryBid(Bid(self.second_test_set[3]), 'MX'),
-                                                CountryBid(Bid(self.second_test_set[3]), 'CA')])
+        self.assertEqual(result_rdd.collect(), [CountryBid(Bid(self.second_test_set[0], COUNTRIES), 'MX'),
+                                                CountryBid(Bid(self.second_test_set[0], COUNTRIES), 'CA'),
+                                                CountryBid(Bid(self.second_test_set[1], COUNTRIES), 'US'),
+                                                CountryBid(Bid(self.second_test_set[1], COUNTRIES), 'MX'),
+                                                CountryBid(Bid(self.second_test_set[1], COUNTRIES), 'CA'),
+                                                CountryBid(Bid(self.second_test_set[3], COUNTRIES), 'MX'),
+                                                CountryBid(Bid(self.second_test_set[3], COUNTRIES), 'CA')])
         self.sc.stop()
 
 

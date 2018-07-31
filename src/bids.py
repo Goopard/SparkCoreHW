@@ -1,25 +1,22 @@
-import os
-from bid_classes import ErrorBid, Bid, CountryBid, CountryBidWithName, Exchange, ErrorBidWithFrequency, Motel
 from pyspark import SparkConf, SparkContext
-from operator import attrgetter, itemgetter
+from bid_classes import ErrorBid, Bid, CountryBid, CountryBidWithName, Exchange, ErrorBidWithFrequency, Motel
+from operator import attrgetter, itemgetter, add
 from functools import partial
 
 
-os.environ['JAVA_HOME'] = 'C:\\Progra~1\\Java\\jdk1.8.0_181'
-os.environ['HADOOP_HOME'] = 'C:\\hadoop'
+COUNTRIES = ['US', 'MX', 'CA']
 
 
 def get_errors_rdd(rdd):
     """This functions finds all the erroneous records in the given rdd, cast those records to the ErrorBid class, than
-    groups them by the date and code, then counts the frequency for each error code in each hour, and returns the result
-    as rdd.
+    maps them to a proper key-value, then counts the frequency of each key (date and code) by a reduceByKey operation.
 
     :param rdd: The input rdd with some bids.
     :type rdd: RDD.
     :return: RDD -- the required list of errors with the frequencies in each hour.
     """
-    return rdd.filter(lambda line: 'ERROR' in line).map(ErrorBid)\
-        .groupBy(lambda error: (error.date, error.error_code)).mapValues(len).map(ErrorBidWithFrequency)
+    return rdd.filter(lambda line: 'ERROR' in line).map(ErrorBid).map(lambda bid: ((bid.date, bid.error_code), 1))\
+        .reduceByKey(add).map(ErrorBidWithFrequency)
 
 
 def collect_countries(bid):
@@ -29,7 +26,7 @@ def collect_countries(bid):
     :type bid: Bid.
     :return: list(CountryBid) -- the required CountryBid instances.
     """
-    return [CountryBid(bid, 'US'), CountryBid(bid, 'MX'), CountryBid(bid, 'CA')]
+    return [CountryBid(bid, country) for country in COUNTRIES]
 
 
 def get_clear_rdd(raw_unclear_rdd):
@@ -41,8 +38,8 @@ def get_clear_rdd(raw_unclear_rdd):
     :type raw_unclear_rdd: RDD.
     :return: RDD - required error-clear rdd with only the CountryBids left.
     """
-    return raw_unclear_rdd.filter(lambda line: 'ERROR' not in line).map(Bid).flatMap(collect_countries)\
-        .filter(attrgetter('price'))
+    return raw_unclear_rdd.filter(lambda line: 'ERROR' not in line).map(partial(Bid, countries=COUNTRIES))\
+        .flatMap(collect_countries).filter(attrgetter('price'))
 
 
 def get_eur_prices_rdd(rdd, path_to_exchange, spark_context):
@@ -56,19 +53,20 @@ def get_eur_prices_rdd(rdd, path_to_exchange, spark_context):
     :type spark_context: SparkContext.
     :return: RDD.
     """
-    def bid_to_eu(bid):
+    def bid_to_eu(bid, exchange_brd):
         """This function simply converts bid's price from dollar to euro.
 
         :param bid: Input bid.
         :type bid: CountryBid.
+        :param exchange_brd: Broadcasted dict with exchange rates.
         :return: CountryBid.
         """
-        bid.price = bid.price * exchange.value[bid.date]
+        bid.price = bid.price * exchange_brd.value[bid.date]
         return bid
 
     exchange_rdd = spark_context.textFile(path_to_exchange).map(Exchange)
     exchange = spark_context.broadcast({ex.date: ex.rate for ex in exchange_rdd.collect()})
-    return rdd.map(bid_to_eu)
+    return rdd.map(partial(bid_to_eu, exchange=exchange))
 
 
 def get_motels_names_rdd(rdd, path_to_motels, spark_context):
@@ -95,8 +93,7 @@ def get_max_bid_rdd(rdd):
     :type rdd: RDD.
     :return: RDD - the required rdd with only the most expensive bids.
     """
-    return rdd.groupBy(lambda bid: bid.motel_id + ',' + bid.date).mapValues(partial(max, key=attrgetter('price')))\
-        .map(itemgetter(1))
+    return rdd.map(lambda bid: ((bid.motel_id, bid.date), bid)).reduceByKey(max).map(itemgetter(1))
 
 
 if __name__ == '__main__':
