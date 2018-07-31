@@ -4,3 +4,4 @@ input/
 output/bids/
 output/bids_euro/
 output/error_bids/
+src/test.py
